@@ -34,11 +34,24 @@ Summary of trainning results:
 According to the above table, the top ranked model is WeightedEnsemble_L2, the two layers ensemble model.
 
 ## Exploratory data analysis and feature creation
-### What did the exploratory analysis find and how did you add additional features?
-TODO: Add your explanation
+
+### Work on Features
+
+#### Transform existing features
+
+The features of "season" and "weather" are actually categorial but recongnized initially as numerical. Therefore, transform these two features to help model better utilize them when training.
+
+#### Create new features
+
+![hourly count](https://github.com/yuting1214/Udacity_Proj1/blob/main/plots/hour_dist.png)
+
+There is an obvious pattern in the hourly count even in different year. Therefore, to increase the complexity of the models, we create a new categorial feature called "hour" from datatime to differentiate the demand count in different hour.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-TODO: Add your explanation
+
+
+
+### Work on Response
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
