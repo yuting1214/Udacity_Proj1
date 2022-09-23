@@ -85,7 +85,7 @@ Preprocessing:
 Hyperparameter:
    n_estimators(trees): 200
 Evaluation:
-   
+   RMSLE: 0.42584(leaderboard)
 ```
 
 ## Hyper parameter tuning
@@ -117,4 +117,6 @@ TODO: Replace the image below with your own.
 ![model_test_score.png](img/model_test_score.png)
 
 ## Summary
-TODO: Add your explanation
+
+Autogluon is a convenient tool when attempting to execute bunch of powerful models simultanouely.
+Howeever, its flexibility brings some complexity when. Therefore, it would better start from some go-to methods like RandomForest first. And use Autoluoon as auxiliary tool when trying to increate the complexitiy of the model.
