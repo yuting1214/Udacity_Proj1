@@ -149,3 +149,7 @@ So the model doesn't do well compare to simple Random Forest model.
 ## Summary
 
 Autogluon is a convenient tool when attempting to execute a bunch of powerful models simultaneously. However, its flexibility brings some burden when trying to adjust each specific model. Therefore, it would be better to start with some go-to methods like RandomForest from scikit-learn first. And use Autoluoon as an auxiliary tool when trying to increase the complexity of the models.
+
+## Kaggle Notebook reference
+
+https://github.com/logicalguess/kaggle-bike-sharing-demand/blob/master/code/main.py
