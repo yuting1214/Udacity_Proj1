@@ -48,8 +48,27 @@ The features of "season" and "weather" are actually categorial but recongnized i
 There is an obvious pattern in the hourly count even in different year. Therefore, to increase the complexity of the models, we create a new categorial feature called "hour" from datatime to differentiate the demand count in different hour.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-
-
+| model | score_val                         | pred_time_val | fit_time  | pred_time_val_marginal | fit_time_marginal | stack_level | can_infer | fit_order | fit_order |   |
+|-------|-----------------------------------|---------------|-----------|------------------------|-------------------|-------------|-----------|-----------|-----------|---|
+| 0     | WeightedEnsemble_L3               | -28.405767    | 16.580596 | 906.125983             | 0.001054          | 0.844273    | 3         | True      | 19        |   |
+| 1     | NeuralNetFastAI_BAG_L2            | -28.479117    | 15.927134 | 666.571042             | 0.884139          | 42.337493   | 2         | True      | 18        |   |
+| 2     | LightGBMXT_BAG_L2                 | -30.496543    | 16.635251 | 634.827226             | 1.592256          | 10.593677   | 2         | True      | 13        |   |
+| 3     | CatBoost_BAG_L2                   | -30.612008    | 15.259786 | 854.975517             | 0.216791          | 230.741968  | 2         | True      | 16        |   |
+| 4     | LightGBM_BAG_L2                   | -30.644736    | 15.478612 | 632.202249             | 0.435617          | 7.968700    | 2         | True      | 14        |   |
+| 5     | ExtraTreesMSE_BAG_L2              | -32.637065    | 16.114563 | 627.123394             | 1.071568          | 2.889845    | 2         | True      | 17        |   |
+| 6     | RandomForestMSE_BAG_L2            | -32.785444    | 15.991667 | 631.278578             | 0.948672          | 7.045029    | 2         | True      | 15        |   |
+| 7     | WeightedEnsemble_L2               | -33.437004    | 12.522007 | 563.113157             | 0.001997          | 0.949021    | 2         | True      | 12        |   |
+| 8     | LightGBM_BAG_L1                   | -35.724454    | 3.020893  | 9.857582               | 3.020893          | 9.857582    | 1         | True      | 4         |   |
+| 9     | LightGBMXT_BAG_L1                 | -36.181212    | 7.431891  | 13.941288              | 7.431891          | 13.941288   | 1         | True      | 3         |   |
+| 10    | CatBoost_BAG_L1                   | -36.268528    | 0.291619  | 492.539192             | 0.291619          | 492.539192  | 1         | True      | 6         |   |
+| 11    | NeuralNetFastAI_BAG_L1            | -36.474018    | 0.695772  | 41.922104              | 0.695772          | 41.922104   | 1         | True      | 8         |   |
+| 12    | ExtraTreesMSE_BAG_L1              | -38.363770    | 0.918801  | 2.239453               | 0.918801          | 2.239453    | 1         | True      | 7         |   |
+| 13    | RandomForestMSE_BAG_L1            | -38.438708    | 0.959705  | 3.852583               | 0.959705          | 3.852583    | 1         | True      | 5         |   |
+| 14    | XGBoost_BAG_L1                    | -40.322325    | 0.771656  | 18.820589              | 0.771656          | 18.820589   | 1         | True      | 9         |   |
+| 15    | NeuralNetTorch_BAG_L1             | -44.783546    | 0.640904  | 36.390091              | 0.640904          | 36.390091   | 1         | True      | 10        |   |
+| 16    | KNeighborsDist_BAG_L1             | -84.146423    | 0.120130  | 0.051387               | 0.120130          | 0.051387    | 1         | True      | 2         |   |
+| 17    | KNeighborsUnif_BAG_L1 -101.588176 | 0.123894      | 0.064907  | 0.123894               | 0.064907          | 1           | True      | 1         |           |   |
+| 18    | LightGBMLarge_BAG_L1 -176.376584  | 0.067731      | 4.554373  | 0.067731               | 4.554373          | 1           | True      | 11        |           |   |
 
 ### Work on Response
 
