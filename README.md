@@ -90,31 +90,50 @@ Evaluation:
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
-TODO: Add your explanation
+```
+Use LightGBM to conduct Hyper parameter tuning
+
+gbm_options = {  # specifies non-default hyperparameter values for lightGBM gradient boosted trees
+    'num_boost_round': 300,  # number of boosting rounds (controls training time of GBM models) default:100
+    'num_leaf': ag.space.Int(lower=20, upper=66, default=31),  # number of leaves in trees (integer hyperparameter)
+    'reg_alpha': ag.space.Real(0.0, 0.1, default=0.0)
+
+}
+```
+
+Submit the prediction from best model: 0.66786(publicScore).
+
+So the model doesn't do well compare to simple Random Forest model.
+
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
 
 1. Add a feature related to whether rain or not.
 2. Check specfic holidays in the datetime that are not recoreded
+3. Try [MARS](https://contrib.scikit-learn.org/py-earth/content.html#multivariate-adaptive-regression-splines)
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
-|model|hpo1|hpo2|hpo3|score|
-|--|--|--|--|--|
-|initial|?|?|?|?|
-|add_features|?|?|?|?|
-|hpo|?|?|?|?|
+
+| fileName                         | date                | description                       | status   | publicScore | privateScore |   |   |   |   |   |
+|----------------------------------|---------------------|-----------------------------------|----------|-------------|--------------|---|---|---|---|---|
+| submission_new_hpo.csv           | 2022-09-23 02:15:44 | new features with hyperparameters | complete | 0.66786     | 0.66786      |   |   |   |   |   |
+| submission_new_features_logy.csv | 2022-09-22 17:20:53 | new features log y                | complete | 0.96457     | 0.96457      |   |   |   |   |   |
+| submission_lag1_log.csv          | 2022-09-22 16:22:58 | lag1 log y                        | complete | 0.42835     | 0.42835      |   |   |   |   |   |
+| submission_rf_log.csv            | 2022-09-22 05:01:29 | random forest log y               | complete | 0.42584     | 0.42584      |   |   |   |   |   |
+| submission_rf.csv                | 2022-09-22 04:55:06 | random forest                     | complete | 0.54418     | 0.54418      |   |   |   |   |   |
+| submission_rmsle_new.csv         | 2022-09-22 00:19:58 | rmsle_update                      | complete | 0.72473     | 0.72473      |   |   |   |   |   |
+| submission_rmsle.csv             | 2022-09-21 23:49:51 | rmsle                             | complete | 0.70231     | 0.70231      |   |   |   |   |   |
+| submission_new_features.csv      | 2022-09-21 22:31:06 | new features                      | complete | 0.54823     | 0.54823      |   |   |   |   |   |
+| submission.csv                   | 2022-09-21 21:16:35 | first raw submission              | complete | 1.84672     | 1.84672      |   |   |   |   |   |
+
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
-TODO: Replace the image below with your own.
-
-![model_train_score.png](img/model_train_score.png)
+![model_train_score.png](https://github.com/yuting1214/Udacity_Proj1/blob/main/plots/train_score.png)
 
 ### Create a line plot showing the top kaggle score for the three (or more) prediction submissions during the project.
 
-TODO: Replace the image below with your own.
-
-![model_test_score.png](img/model_test_score.png)
+![model_test_score.png](https://github.com/yuting1214/Udacity_Proj1/blob/main/plots/test_score.png)
 
 ## Summary
 
