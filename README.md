@@ -72,12 +72,30 @@ There is an obvious pattern in the hourly count even in different year. Therefor
 
 ### Work on Response
 
+Original response is skewed, so apply log transform to help better detect the relationship with features.
+
+![Transformation](https://github.com/yuting1214/Udacity_Proj1/blob/main/plots/y_transform.png)
+
+### Train with scikit-learn
+```
+Model: Random Forest Regressor with 200 trees.
+Preprocessing:
+   New feature: "hour"
+   One-hot encoding:  ['season', 'holiday', 'weather', 'year', 'month', 'hour']
+Hyperparameter:
+   n_estimators(trees): 200
+Evaluation:
+   
+```
+
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
 TODO: Add your explanation
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
-TODO: Add your explanation
+
+1. Add a feature related to whether rain or not.
+2. Check specfic holidays in the datetime that are not recoreded
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |model|hpo1|hpo2|hpo3|score|
