@@ -148,5 +148,4 @@ So the model doesn't do well compare to simple Random Forest model.
 
 ## Summary
 
-Autogluon is a convenient tool when attempting to execute bunch of powerful models simultanouely.
-Howeever, its flexibility brings some complexity when. Therefore, it would better start from some go-to methods like RandomForest first. And use Autoluoon as auxiliary tool when trying to increate the complexitiy of the model.
+Autogluon is a convenient tool when attempting to execute a bunch of powerful models simultaneously. However, its flexibility brings some burden when trying to adjust each specific model. Therefore, it would be better to start with some go-to methods like RandomForest from scikit-learn first. And use Autoluoon as an auxiliary tool when trying to increase the complexity of the models.
