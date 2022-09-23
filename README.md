@@ -114,18 +114,29 @@ So the model doesn't do well compare to simple Random Forest model.
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 
-| fileName                         | date                | description                       | status   | publicScore | privateScore |   |   |   |   |   |
-|----------------------------------|---------------------|-----------------------------------|----------|-------------|--------------|---|---|---|---|---|
-| submission_new_hpo.csv           | 2022-09-23 02:15:44 | new features with hyperparameters | complete | 0.66786     | 0.66786      |   |   |   |   |   |
-| submission_new_features_logy.csv | 2022-09-22 17:20:53 | new features log y                | complete | 0.96457     | 0.96457      |   |   |   |   |   |
-| submission_lag1_log.csv          | 2022-09-22 16:22:58 | lag1 log y                        | complete | 0.42835     | 0.42835      |   |   |   |   |   |
-| submission_rf_log.csv            | 2022-09-22 05:01:29 | random forest log y               | complete | 0.42584     | 0.42584      |   |   |   |   |   |
-| submission_rf.csv                | 2022-09-22 04:55:06 | random forest                     | complete | 0.54418     | 0.54418      |   |   |   |   |   |
-| submission_rmsle_new.csv         | 2022-09-22 00:19:58 | rmsle_update                      | complete | 0.72473     | 0.72473      |   |   |   |   |   |
-| submission_rmsle.csv             | 2022-09-21 23:49:51 | rmsle                             | complete | 0.70231     | 0.70231      |   |   |   |   |   |
-| submission_new_features.csv      | 2022-09-21 22:31:06 | new features                      | complete | 0.54823     | 0.54823      |   |   |   |   |   |
-| submission.csv                   | 2022-09-21 21:16:35 | first raw submission              | complete | 1.84672     | 1.84672      |   |   |   |   |   |
+| fileName                         | date                | description                       | status   | publicScore | privateScore | 
+|----------------------------------|---------------------|-----------------------------------|----------|-------------|--------------|
+| submission_new_hpo.csv           | 2022-09-23 02:15:44 | new features with hyperparameters | complete | 0.66786     | 0.66786      | 
+| submission_new_features_logy.csv | 2022-09-22 17:20:53 | new features log y                | complete | 0.96457     | 0.96457      |  
+| submission_lag1_log.csv          | 2022-09-22 16:22:58 | lag1 log y                        | complete | 0.42835     | 0.42835      |  
+| submission_rf_log.csv            | 2022-09-22 05:01:29 | random forest log y               | complete | 0.42584     | 0.42584      |  
+| submission_rf.csv                | 2022-09-22 04:55:06 | random forest                     | complete | 0.54418     | 0.54418      |  
+| submission_rmsle_new.csv         | 2022-09-22 00:19:58 | rmsle_update                      | complete | 0.72473     | 0.72473      |
+| submission_rmsle.csv             | 2022-09-21 23:49:51 | rmsle                             | complete | 0.70231     | 0.70231      |  
+| submission_new_features.csv      | 2022-09-21 22:31:06 | new features                      | complete | 0.54823     | 0.54823      |  
+| submission.csv                   | 2022-09-21 21:16:35 | first raw submission              | complete | 1.84672     | 1.84672      |  
 
+| Brief | Detail | 
+|-------------|--------------|
+| first raw submission | Parse date, use AutoGluon directly |
+| new features | Categorize: season, weather; Add hour |
+| rmsle | Replace eval_metric with self-defined rmsle in AutoGluon  |
+| rmsle_update  | Replace eval_metric with self-defined rmsle in AutoGluon and make sure use new features  |
+| random forest | Use RF in scikit-learn and features as "new features" |
+| random forest log y | Same as "random forest" but transform y with log |
+| lag1 log y | Use "random forest" to create a lag one feature for test data and train a "random forest" with lag one count feature |
+| new features log y | Same as "new features"  but transform y with log |
+| new features with hyperparameters | Hyperparameter tunning on lightGBM |
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
