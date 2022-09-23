@@ -153,3 +153,57 @@ Autogluon is a convenient tool when attempting to execute a bunch of powerful mo
 ## Kaggle Notebook reference
 
 https://github.com/logicalguess/kaggle-bike-sharing-demand/blob/master/code/main.py
+
+## Suggestions:
+
+### Pandas profiling for jumpstart EDA
+
+https://towardsdatascience.com/exploratory-data-analysis-with-pandas-profiling-de3aae2ddff3
+
+### When works involing load api token, use
+
+https://pypi.org/project/python-dotenv/
+
+```
+echo "KAGGLE_USERNAME=yourkaggleusername" >> .env
+echo "KAGGLE_KEY=yourkagglekey" >> .env
+
+!pip install python-dotenv
+from dotenv import dotenv_values
+
+CONFIG = dotenv_values('.env')
+
+kaggle_username = CONFIG['KAGGLE_USERNAME']
+kaggle_key = CONFIG['KAGGLE_KEY']
+```
+
+### Feature Engineering for time-series data
+
+https://tsfresh.readthedocs.io/en/latest/
+
+### Comment about histogram
+
+A histogram is an appropriate graph for the initial exploration of a continuous variable. That is why this operation is one of the step of 🔗Exploratory Data Analysis
+
+A histogram provides a visual representation of the distribution of a dataset: location, spread and skewness of the data; it also helps to visualize whether the distribution is symmetric or skewed left or right. In addition, if it is unimodal, bimodal or multimodal.
+
+It can also show any outliers or gaps in the data. In brief, a histogram summarizes the distribution properties of a continuous numerical variable.
+
+```
+train.hist(); # semicolon avoid unnessary printout.
+```
+
+### Category type features
+
+https://towardsdatascience.com/staying-sane-while-adopting-pandas-categorical-datatypes-78dbd19dcd8a
+
+### Hyperparameter tuning in AutoGluon
+
+* Do not specify the hyperparameter_tune_kwargs argument (counterintuitively, hyperparameter tuning is not the best way to spend a limited training time budgets, as model ensembling is often superior)
+
+* We recommend you only use hyperparameter_tune_kwargs if your goal is to deploy a single model rather than an ensemble.
+
+* Do not specify hyperparameters argument (allow AutoGluon to adaptively select which models/hyperparameters to use).
+
+[Hyperparameter Tuning is Overrated Apply AutoGluon-Tabular, an AutoML Algorithm](https://www.youtube.com/watch?v=BzVg7zMSwNY)
+
